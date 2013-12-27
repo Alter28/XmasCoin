@@ -1061,7 +1061,7 @@ void ThreadMapPort2(void* parg)
             }
         }
 
-        string strDesc = "SmallChange " + FormatFullVersion();
+        string strDesc = "XmasCoin " + FormatFullVersion();
 #ifndef UPNPDISCOVER_SUCCESS
         /* miniupnpc 1.5 */
         r = UPNP_AddPortMapping(urls.controlURL, data.first.servicetype,
@@ -1152,6 +1152,7 @@ static const char *strDNSSeed[][2] = {
     //{"litecoinpool.org", "dnsseed.litecoinpool.org"},
     //{"bytesized-vps.com", "dnsseed.bytesized-vps.com"},
     //{"xurious.com", "dnsseed.ltc.xurious.com"},
+    {"xmascoin.info", "seed.xmascoin.info"},
 };
 
 void ThreadDNSAddressSeed(void* parg)
@@ -1727,7 +1728,7 @@ bool BindListenPort(const CService &addrBind, string& strError)
     {
         int nErr = WSAGetLastError();
         if (nErr == WSAEADDRINUSE)
-            strError = strprintf(_("Unable to bind to %s on this computer. SmallChange is probably already running."), addrBind.ToString().c_str());
+            strError = strprintf(_("Unable to bind to %s on this computer. XmasCoin is probably already running."), addrBind.ToString().c_str());
         else
             strError = strprintf(_("Unable to bind to %s on this computer (bind returned error %d, %s)"), addrBind.ToString().c_str(), nErr, strerror(nErr));
         printf("%s\n", strError.c_str());
