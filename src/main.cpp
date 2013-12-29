@@ -29,7 +29,7 @@ CTxMemPool mempool;
 unsigned int nTransactionsUpdated = 0;
 
 map<uint256, CBlockIndex*> mapBlockIndex;
-uint256 hashGenesisBlock("0x384b060671f4a93948e9c168216dadb0ca2fbc54aa11c86b0345b6af1c59b2f5");
+uint256 hashGenesisBlock("0x324f221c662c4bd1dbef2032c167bebb1ea08a0611795bc99cf05935c2d7195e");
 static CBigNum bnProofOfWorkLimit(~uint256(0) >> 20); // starting difficulty is 1 / 2^12
 CBlockIndex* pindexGenesisBlock = NULL;
 int nBestHeight = -1;
@@ -837,7 +837,7 @@ int64 static GetBlockValue(int nHeight, int64 nFees)
     return nSubsidy + nFees;
 }
 
-static const int64 nTargetTimespan = 4 * 60 * 60; // XmasCoin: 4 hours
+static const int64 nTargetTimespan = 12 * 60 * 60; // XmasCoin: 12 hours
 static const int64 nTargetSpacing = 10 * 60; // XmasCoin: 10 minutes
 static const int64 nInterval = nTargetTimespan / nTargetSpacing;
 
@@ -2029,14 +2029,13 @@ bool LoadBlockIndex(bool fAllowNew)
         block.hashPrevBlock = 0;
         block.hashMerkleRoot = block.BuildMerkleTree();
         block.nVersion = 1;
-        block.nTime    = 1388180908;
+        block.nTime    = 1388294511;
         block.nBits    = 0x1e0ffff0;
-        block.nNonce   = 3073732;
+        block.nNonce   = 3641829;
 
         if (fTestNet)
         {
             block.nTime    = 1388180908;
-            //block.nNonce   = 386402991;
             block.nNonce   = 3073732;
         }
 
@@ -2047,7 +2046,7 @@ bool LoadBlockIndex(bool fAllowNew)
         assert(block.hashMerkleRoot == uint256("0xd4544facabaedca3ca209202d7a435825d7b72c318b132a5fda3fce08626c9ee"));
 
         // If genesis block hash does not match, then generate new genesis hash.
-        if (true && block.GetHash() != hashGenesisBlock)
+        if (false && block.GetHash() != hashGenesisBlock)
         {
             printf("Searching for genesis block...\n");
             // This will figure out a valid hash and Nonce if you're
