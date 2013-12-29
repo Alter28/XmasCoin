@@ -137,10 +137,10 @@ bool AppInit(int argc, char* argv[])
             // First part of help message is specific to XmasCoin server / RPC client
             std::string strUsage = _("XmasCoin version") + " " + FormatFullVersion() + "\n\n" +
                 _("Usage:") + "\n" +
-                  "  xmascoin [options]                     " + "\n" +
-                  "  xmascoin [options] <command> [params]  " + _("Send command to -server or xmascoin") + "\n" +
-                  "  xmascoin [options] help                " + _("List commands") + "\n" +
-                  "  xmascoin [options] help <command>      " + _("Get help for a command") + "\n";
+                  "  xmascoind [options]                     " + "\n" +
+                  "  xmascoind [options] <command> [params]  " + _("Send command to -server or xmascoind") + "\n" +
+                  "  xmascoind [options] help                " + _("List commands") + "\n" +
+                  "  xmascoind [options] help <command>      " + _("Get help for a command") + "\n";
 
             strUsage += "\n" + HelpMessage();
 
@@ -221,7 +221,7 @@ std::string HelpMessage()
 {
     string strUsage = _("Options:") + "\n" +
         "  -conf=<file>           " + _("Specify configuration file (default: xmascoin.conf)") + "\n" +
-        "  -pid=<file>            " + _("Specify pid file (default: xmascoin.pid)") + "\n" +
+        "  -pid=<file>            " + _("Specify pid file (default: xmascoind.pid)") + "\n" +
         "  -gen                   " + _("Generate coins") + "\n" +
         "  -gen=0                 " + _("Don't generate coins") + "\n" +
         "  -datadir=<dir>         " + _("Specify data directory") + "\n" +
