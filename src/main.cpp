@@ -831,8 +831,8 @@ int64 static GetBlockValue(int nHeight, int64 nFees)
     int64 nSubsidy = 365 * COIN;
 
 
-    // Subsidy is cut in half every 3650000 blocks, which will occur approximately every 4 years
-    nSubsidy >>= (nHeight / 3650000); // XmasCoin: 840k blocks in ~4 years
+    // Subsidy is cut in half every 3650000 blocks, which will occur approximately every  years
+    nSubsidy >>= (nHeight / 3650000); // XmasCoin: 96B blocks in ~4 years
 
     return nSubsidy + nFees;
 }
@@ -2005,16 +2005,15 @@ bool LoadBlockIndex(bool fAllowNew)
             return false;
     
 	// Genesis block:
-	// block.nTime = 1366559428 
-	// block.nNonce = 2085386442 
-	// block.GetHash = 384b060671f4a93948e9c168216dadb0ca2fbc54aa11c86b0345b6af1c59b2f5
-	// CBlock(hash=384b060671f4a93948e9, PoW=00000951e146b0026411, ver=1,
-	//  hashPrevBlock=00000000000000000000, hashMerkleRoot=5a2e19825b,
-	//  nTime=1366559428, nBits=1e0ffff0, nNonce=2085386442, vtx=1)
-	// CTransaction(hash=5a2e19825b, ver=1, vin.size=1, vout.size=1, nLockTime=0)
-	// CTxIn(COutPoint(0000000000, -1), coinbase 04ffff001d010441746f646f3a207265706c616365207769746820736f6d657468696e67207468617420656e7375726573206e6f207072656d696e696e6720746f6f6b20706c616365)
-	// CTxOut(error)
-	// vMerkleTree: 5a2e19825b
+    // 	block.nTime = 1388294511 
+    // block.nNonce = 3641829 
+    // block.GetHash = 324f221c662c4bd1dbef2032c167bebb1ea08a0611795bc99cf05935c2d7195e
+    // CBlock(hash=324f221c662c4bd1dbef, PoW=0000099fcb336a883354, ver=1, hashPrevBlock=00000000000000000000, hashMerkleRoot=d4544facab, nTime=1388294511, nBits=1e0ffff0, nNonce=3641829, vtx=1)
+    //   CTransaction(hash=d4544facab, ver=1, vin.size=1, vout.size=1, nLockTime=0)
+    //     CTxIn(COutPoint(0000000000, -1), coinbase 04ffff001d010425586d6173436f696e202b506f7765722074686520656e64206e657720796561722032303134)
+    //     CTxOut(error)
+    //   vMerkleTree: d4544facab 
+
         
         // Genesis block
         const char* pszTimestamp = "XmasCoin +Power the end new year 2014";
