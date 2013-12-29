@@ -1,5 +1,6 @@
 src/*.exe
 src/xmascoind
+src/xmascoin
 src/test_xmascoind
 src/build.h
 .*.swp
